@@ -1,0 +1,12 @@
+{
+  "name": "intersect",
+  "version": "1.0.0",
+  "description": "6000万数据包和300万数据包在50M内存使用环境中求交集",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "cat result.txt",
+  },
+  "author": "",
+  "license": "ISC"
+}
