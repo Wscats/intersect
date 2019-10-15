@@ -1,6 +1,11 @@
-# 下载 && 运行 
+# 下载 && 运行
 
-运行成功后结果会在`result.txt`中展现：
+下载源代码：
+```bash
+git clone https://github.com/Wscats/intersect
+```
+
+使用以下命令运行测试，运行成功后结果会在`result.txt`中展现结果：
 ```bash
 # 运行
 npm start
@@ -161,4 +166,17 @@ module.exports = () => {
 module.exports = (a, b) => {
     return a.filter(x => new Set(b).has(x));
 }
+```
+
+# index.js
+
+这里分别把上面两份处理关键数据的逻辑引入，然后执行逻辑：
+```js
+const data3M = require('./library/data-3M');
+const data60M = require('./library/data-60M');
+(async () => {
+    let smallData = await data3M();
+    let result = await data60M(smallData);
+    console.log(result);
+})();
 ```

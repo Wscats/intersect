@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "cat result.txt",
+    "dev": "cat result.txt"
   },
   "author": "",
   "license": "ISC"
