@@ -1,5 +1,6 @@
 const fs = require("fs");
-const writer = fs.createWriteStream('data-60M.txt', { highWaterMark: 1 });
+const path = require('path');
+const writer = fs.createWriteStream(path.resolve(__dirname, '../database/data-60M.txt'), { highWaterMark: 1 });
 
 function writeSixtyMillionTimes(writer) {
     // 初始化6000万数据

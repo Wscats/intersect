@@ -11,6 +11,8 @@ git clone https://github.com/Wscats/intersect
 npm start
 # 查看结果
 npm run dev
+# 生成新的大数据
+npm run build
 ```
 
 # 目录结构

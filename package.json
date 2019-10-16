@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
+    "build": "node ./library/create-60M",
     "dev": "cat result.txt"
   },
   "author": "",
