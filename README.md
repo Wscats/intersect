@@ -127,6 +127,8 @@ if (lineCount === 600) {
         writeResult(element)
     });
     // 释放缓存
+    rawData = null;
+    intersectResult = null;
     rawData = [];
     // 重置读取次数
     lineCount = 0;
