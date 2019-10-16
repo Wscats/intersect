@@ -2,11 +2,8 @@ const fs = require("fs");
 const path = require('path');
 const writer = fs.createWriteStream(path.resolve(__dirname, '../database/data-60M.txt'), { highWaterMark: 1 });
 
-function writeSixtyMillionTimes(writer) {
-    // 初始化6000万数据
-    let i = 60000000;
-    write();
-    function write() {
+const writeSixtyMillionTimes = (writer) => {
+    const write = () => {
         let data = Buffer.from(`${parseInt(Math.random() * 60000000)}\n`)
         let ok = true;
         do {
@@ -26,6 +23,9 @@ function writeSixtyMillionTimes(writer) {
             writer.once('drain', write);
         }
     }
+    // 初始化6000万数据
+    let i = 600000;
+    write();
 }
 
 writeSixtyMillionTimes(writer)

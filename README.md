@@ -24,6 +24,7 @@ npm run build
     - data-3M.js - 处理3百万数据包的逻辑
     - data-60M.js - 处理6千万数据包的逻辑
     - intersect.js - 处理数据包的交集
+    - create-60M.js - 生成大数据的文件
 - result.txt 最终数据包的交集结果
 - index.js 主逻辑文件
 
@@ -183,4 +184,41 @@ const data60M = require('./library/data-60M');
     let result = await data60M(smallData);
     console.log(result);
 })();
+```
+
+# create-60M.js
+
+生成全新的大数据，用于测试：
+```js
+const fs = require("fs");
+const path = require('path');
+const writer = fs.createWriteStream(path.resolve(__dirname, '../database/data-60M.txt'), { highWaterMark: 1 });
+
+const writeSixtyMillionTimes = (writer) => {
+    const write = () => {
+        let data = Buffer.from(`${parseInt(Math.random() * 60000000)}\n`)
+        let ok = true;
+        do {
+            i--;
+            if (i === 0) {
+                // 最后一次写入。
+                writer.write(data);
+            } else {
+                // 检查是否可以继续写入。 
+                // 不要传入回调，因为写入还没有结束。
+                ok = writer.write(data);
+            }
+        } while (i > 0 && ok);
+        if (i > 0) {
+            // 被提前中止。
+            // 当触发 'drain' 事件时继续写入。
+            writer.once('drain', write);
+        }
+    }
+    // 初始化6000万数据
+    let i = 600000;
+    write();
+}
+
+writeSixtyMillionTimes(writer)
 ```
