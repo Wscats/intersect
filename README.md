@@ -222,3 +222,9 @@ const writeSixtyMillionTimes = (writer) => {
 
 writeSixtyMillionTimes(writer)
 ```
+
+# 后记
+
+15 个月后再回顾，发现跟 VSCode 的这个思路很相似，具体如下
+
+- [Text Buffer Reimplementation](https://code.visualstudio.com/blogs/2018/03/23/text-buffer-reimplementation)
