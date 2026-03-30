@@ -6,8 +6,14 @@
   "scripts": {
     "start": "node index",
     "build": "node ./library/create-60M",
-    "dev": "cat result.txt"
+    "dev": "cat result.txt",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
+    "test": "jest --coverage",
+    "type-check": "tsc --noEmit"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
