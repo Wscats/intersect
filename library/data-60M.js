@@ -1,3 +1,5 @@
+'use strict';
+
 const { createReadStream, appendFile } = require('fs');
 const readline = require('readline');
 const intersect = require('./intersect');

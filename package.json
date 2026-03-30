@@ -9,11 +9,25 @@
     "dev": "cat result.txt",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
     "test": "jest --coverage",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "lint:check": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "author": "",
+  "author": "wscats (https://github.com/wscats)",
   "license": "ISC",
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "keywords": [
+    "intersect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wscats/intersect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wscats/intersect/issues"
+  },
+  "homepage": "https://github.com/wscats/intersect#readme"
 }

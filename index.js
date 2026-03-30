@@ -1,3 +1,5 @@
+'use strict';
+
 const data3M = require('./library/data-3M');
 const data60M = require('./library/data-60M');
 (async () => {

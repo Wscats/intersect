@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require("fs");
 const path = require('path');
 const writer = fs.createWriteStream(path.resolve(__dirname, '../database/data-60M.txt'), { highWaterMark: 1 });
